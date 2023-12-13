@@ -10,3 +10,14 @@ output "space_heroes_json" {
   value       = jsondecode(data.http.iss.response_body)    // note the jsondecode()
 }    
 
+output "totalnumber" {
+    description = " total number in the api calling"
+    value = jsondecode(data.http.iss.response_body).number
+
+}
+
+output "personSingle" {
+    description = " total number in the api calling"
+    value = jsondecode(data.http.iss.response_body).people[0].name
+
+}
